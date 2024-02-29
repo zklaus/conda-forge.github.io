@@ -8,6 +8,11 @@ title: 'Infrastructure'
 
 # Infrastructure
 
+This page gives an overview of the Conda-forge infrastructure, that is, an account of the various pieces maintained by the Conda-forge contributors as well as third-party providers that collectively form the basis for the operation of Conda-forge.
+
+We start with the different Github [repositories](#repositories) maintained by Conda-forge itself, then describe the administrative commands available for use in those repositories, the [Admin web services](#admin-web-services), followed by [the CI services](#ci-build-services), i.e. the third-party providers used for building and maintaining packages together.
+After that, we turn to a description of some aspects of the build environment for packages in [Compilers and Runtimes](#compilers-and-runtimes), together with [details about the upload to the package server](#output-validation-and-feedstock-tokens).
+
 <a id="repositories"></a>
 
 ## Repositories

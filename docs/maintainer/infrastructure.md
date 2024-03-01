@@ -8,9 +8,9 @@ title: 'Infrastructure'
 
 # Infrastructure
 
-This page gives an overview of the Conda-forge infrastructure, that is, an account of the various pieces maintained by the Conda-forge contributors as well as third-party providers that collectively form the basis for the operation of Conda-forge.
+This page gives an overview of the conda-forge infrastructure, that is, an account of the various pieces maintained by the conda-forge contributors as well as third-party providers that collectively form the basis for the operation of conda-forge.
 
-We start with the different Github [repositories](#repositories) maintained by Conda-forge itself, then describe the administrative commands available for use in those repositories, the [Admin web services](#admin-web-services), followed by [the CI services](#ci-build-services), i.e. the third-party providers used for building and maintaining packages together.
+We start with the different Github [repositories](#repositories) maintained by conda-forge itself, then describe the administrative commands available for use in those repositories, the [Admin web services](#admin-web-services), followed by [the CI services](#ci-build-services), i.e. the third-party providers used for building and maintaining packages together.
 After that, we turn to a description of some aspects of the build environment for packages in [Compilers and Runtimes](#compilers-and-runtimes), together with [details about the upload to the package server](#output-validation-and-feedstock-tokens).
 
 [Finally](#how-package-building-interacts-with-infrastructure), we see how the process of building a package interacts with different parts of the infrastructure.
@@ -400,8 +400,8 @@ you can then request the conda-forge core devs to archive the old feedstock.
 
 ## How package building interacts with infrastructure
 
-Packages in Conda-forge are always built through CI.
-However, when a new package enters Conda-forge for the first time, it does so via a pull request in the [`staged-recipes` repository](#staging-area-for-recipes), whereas every new build of the package after that is built in its repository, the so-called feedstock.
+Packages in conda-forge are always built through CI.
+However, when a new package enters conda-forge for the first time, it does so via a pull request in the [`staged-recipes` repository](#staging-area-for-recipes), whereas every new build of the package after that is built in its repository, the so-called feedstock.
 Both places use slightly different CI setups and interact with the infrastructure accordingly.
 Hence, we first describe the interaction at the start of a new package and then for existing packages in their respective feedstocks.
 
@@ -546,7 +546,7 @@ there are no further infrastructural details to cover.
 #### Mark a package as broken
 
 Sometimes a package is faulty in ways that a repodata patch cannot amend (e.g. bad binary).
-In these cases, Conda-forge does not remove packages from Anaconda.org.
+In these cases, conda-forge does not remove packages from Anaconda.org.
 Instead, it marks them with the `broken` label, which has a special meaning:
 packages labeled as such will be removed from the repodata via automated patches.
 

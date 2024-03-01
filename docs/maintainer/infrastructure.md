@@ -395,9 +395,9 @@ Maintaining these up-to-date across all feedstocks involves several repositories
 The pipelines can run on several CI providers supported by `conda-smithy`, including:
 
 - Azure DevOps Pipelines
-- Drone.io
 - Travis CI
 - Circle CI
+- Appveyor
 
 Registration of hooks and triggers is also done by the `conda-smithy` app.
 

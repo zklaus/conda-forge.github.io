@@ -9,7 +9,9 @@ This page gives an overview of the conda-forge infrastructure, that is, an accou
 We start with the different Github [repositories](#repositories) maintained by conda-forge itself, then describe the administrative commands available for use in those repositories, the [Admin web services](#admin-web-services), followed by [the CI services](#ci-build-services), i.e. the third-party providers used for building and maintaining packages together.
 After that, we turn to a description of some aspects of the build environment for packages in [Compilers and Runtimes](#compilers-and-runtimes), together with [details about the upload to the package server](#output-validation-and-feedstock-tokens).
 
-[Finally](#how-package-building-interacts-with-infrastructure), we see how the process of building a package interacts with different parts of the infrastructure.
+[Then](#how-package-building-interacts-with-infrastructure), we see how the process of building a package interacts with different parts of the infrastructure.
+
+The following depiction of [automation](#automated-maintenance) explains what makes conda-forge a smoothly running machine.
 
 ## Repositories
 
@@ -494,8 +496,8 @@ Its main user is the core team.
 - 🤖 Uses [`@conda-forge-curator`](https://github.com/conda-forge-curator)
 - 🔒 Has access to Github API, Anaconda.org
 
-This repository hosts workflows that mainly run when triggered by an user-initiated action.
-This is usually done via a PR that, once approved, it's merged and triggers the requested action (mark a package as broken, archive a feedstock, etc).
+This repository hosts workflows that mainly run when triggered by a user-initiated action.
+This is usually done via a PR that, once approved, is merged and triggers the requested action (mark a package as broken, archive a feedstock, etc).
 
 ### artifact-validation
 
@@ -505,7 +507,7 @@ This is usually done via a PR that, once approved, it's merged and triggers the 
 - 🔒 Has access to Github API, Anaconda.org API
 
 The workflows (and code) to scan artifacts uploaded to [anaconda.org/conda-forge](https://anaconda.org/conda-forge).
-Its main output comes in form of [issues in `conda-forge/artifact-validation`](https://github.com/conda-forge/artifact-validation/issues)
+Its main output comes in the form of [issues in `conda-forge/artifact-validation`](https://github.com/conda-forge/artifact-validation/issues)
 
 ### autotick-bot
 

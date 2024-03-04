@@ -544,22 +544,22 @@ Most packages in conda-forge come from a repository named `<package_name>-feedst
 - 🔐 Might have access to Travis CI, Cirun via `admin-requests` (WIP)
 - 🤖 Integrated with [`admin-migrations`](#admin-migrations), [`admin-requests`](#admin-requests), the [`autotick-bot`](#autotick-bot), and [`webservices`](#webservices).
 
-conda-forge has thousands of feedstocks.
+Conda-forge has thousands of feedstocks.
 Each feedstock hosts a recipe plus the required pipelines, supporting scripts and configuration metadata.
 
 The contents of a feedstock are well specified. Only two locations are user-managed:
 
-- `recipe/`: Contains the conda-build instructions to build packages. It needs, at least, a `meta.yaml` file. This directory is managed by the user. This is where `conda_build_config.yaml` usually goes.
-- `conda-forge.yml`: The feedstock configuration file.
+- `recipe/`: Contains the conda-build instructions to build packages. It needs, at least, a `meta.yaml` file, and this is also where the optional `conda_build_config.yaml` usually goes.
+- `conda-forge.yml`: This is the feedstock configuration file.
 
 :::warning
 You should never manually edit files _not_ listed above! Changes will be overridden in the next feedstock rerender.
 :::
 
-Combining these two sources with some external components, `conda-smithy` will generate (render) the contents of the feedstock. Many of the directories are named like that because it is what the external service (e.g. Azure) requests. However, there are some `conda-smithy`-unique directories that are worth discussing:
+Combining these two sources with some external components, `conda-smithy` will generate (render) the contents of the feedstock. Many of the directories are named like that because it is what the external service (e.g. Azure) requests. However, some `conda-smithy`-unique directories are worth discussing:
 
 - `.ci_support/`: Contains the rendered `conda_build_config.yaml` files, passed to `conda-build` via the `-m` flag. Each file here corresponds to one job in the CI build matrix.
-- `.ci_support/migrations/`: Special YAML files that instruct `conda-smithy` how to update the `.ci_support/*.yaml` files. These migration files are usually put here by the `autotick-bot` infrastructure, and removed once the migration is considered finished.
+- `.ci_support/migrations/`: Special YAML files that instruct `conda-smithy` how to update the `.ci_support/*.yaml` files. These migration files are usually put here by the [`autotick-bot`](#autotick-bot) infrastructure, and removed once the migration is considered finished.
 - `.scripts/`: Common logic and code supporting the steps you can find in the CI pipelines and local debugging tools.
 - `build-locally.py`: A Python script to debug recipes in your machine, roughly equivalent to what's done in the CI pipelines.
 
@@ -577,11 +577,11 @@ Combining these two sources with some external components, `conda-smithy` will g
 
 This special repository builds Core Dependency Tree packages for conda-forge (Linux only).
 It doesn't use the feedstock automated machinery.
-Instead, it has its own Azure Pipelines workflow and a well documented README.
+Instead, it has its own Azure Pipelines workflow and a well-documented README.
 
 ### msys2-recipes
 
-- ⚙️ Deployed manually from [`conda-forge/msys2-recipes`](https://github.com/conda-forge/cdt-builds)
+- ⚙️ Deployed manually from [`conda-forge/msys2-recipes`](https://github.com/conda-forge/msys2-recipes)
 
 This is a fork of the old community recipes repository at Anaconda, which includes the `msys2` recipes under the [`msys2/`](https://github.com/conda-forge/msys2-recipes/tree/master/msys2) directory.
 Note also the supporting scripts in the [`common-scripts/`](https://github.com/conda-forge/msys2-recipes/tree/master/common-scripts) folder.

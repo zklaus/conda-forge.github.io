@@ -609,7 +609,7 @@ These organizations exist but they are not in active use anymore:
 #### Teams
 
 The `conda-forge` Github organization has thousands of teams.
-Most of them are associated to a feedstock, but there a few special ones that are not!
+Most of them are associated with a feedstock, but there are a few special ones that are not!
 
 - [`Core`](https://github.com/orgs/conda-forge/teams/Core)
 - [`staged-recipes`](https://github.com/orgs/conda-forge/teams/staged-recipes)
@@ -646,7 +646,7 @@ Most of them are associated to a feedstock, but there a few special ones that ar
 - [`regro-cf-autotick-bot`](https://github.com/regro-cf-autotick-bot)
 
 :::info
-These accounts also exist but are not in active usage anymore:
+These accounts exist but are not in active usage anymore:
 
 - [`conda-forge-drone-ci`](https://github.com/conda-forge-drone-ci)
 
@@ -658,7 +658,7 @@ These accounts also exist but are not in active usage anymore:
 - `conda-forge-webservices`
 
 :::info
-These apps also exist but are not in active usage anymore:
+These apps exist but are not in active usage anymore:
 
 - `conda-forge drone instance`
 
@@ -674,7 +674,7 @@ These apps also exist but are not in active usage anymore:
 ### Continuous integration
 
 :::tip See also
-Refer to the [`conda-forge.yml` documentation](/docs/reference/feedstock-settings.md#conda-forge-yml) to learn how to configure your CI providers.
+Refer to the [`conda-forge.yml` documentation](/docs/maintainer/conda_forge_yml/) to learn how to configure your CI providers.
 :::
 
 #### Azure Pipelines
@@ -697,7 +697,7 @@ conda-forge benefits from the generously offered Microsoft-hosted runners.
 
 - 🌐 https://cirun.io
 - 📍 Available on selected feedstocks only
-- 🛠 Provides several architectures (depends on feedstock configuration)
+- 🛠 Provides several architectures (depending on feedstock configuration)
 - 🔒 Needs access to Anaconda.org (cf-staging) and the configured backend
 
 Configured with `@conda-forge-daemon`.
@@ -721,13 +721,13 @@ Organization-wide configuration can be found in the [`.cirun` repository](https:
 
 #### Anaconda.org
 
-- 🌐 Channels / organizations: [`cf-staging`](https://anaconda.org/cf-staging/dashboard), [`conda-forge`](https://anaconda.org/conda-forge/dashboard)
-- ⛓ Used by [feedstocks](./feedstocks.md)
+- 🌐 Channels/organizations: [`cf-staging`](https://anaconda.org/cf-staging/dashboard), [`conda-forge`](https://anaconda.org/conda-forge/dashboard)
+- ⛓ Used by [feedstocks](#feedstocks)
 
 #### Docker Hub
 
 - 🌐 https://hub.docker.com/u/condaforge/
-- ⛓ Used by [`conda-forge/docker-images`](./tooling-data.md#docker-images), [`conda-forge/miniforge-images`](https://github.com/conda-forge/miniforge-images)
+- ⛓ Used by [`conda-forge/docker-images`](#docker-images), [`conda-forge/miniforge-images`](https://github.com/conda-forge/miniforge-images)
 
 #### Github Packages
 
@@ -742,14 +742,14 @@ Organization-wide configuration can be found in the [`.cirun` repository](https:
 #### Quay
 
 - 🌐 https://quay.io/organization/condaforge
-- ⛓ Used by [`conda-forge/docker-images`](./tooling-data.md#docker-images)
+- ⛓ Used by [`conda-forge/docker-images`](#docker-images)
 
 ### Servers
 
 #### Heroku
 
 - 🌐 https://hub.docker.com/u/condaforge/
-- ⛓ Used by [`webservices`](./automated-maintenance.md#webservices)
+- ⛓ Used by [`webservices`](#webservices)
 
 ### Other services
 

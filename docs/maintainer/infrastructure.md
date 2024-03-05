@@ -22,7 +22,7 @@ You can find the detailed guide for submitting new package recipes in [The stagi
 
 ### Smithy
 
-Smithy contains maintenance code for conda-forge, which is used by the `conda-smithy` command line tool and the [Admin web services](#dev-admservice). Smithy lives in the repository [conda-forge/conda-smithy](https://github.com/conda-forge/conda-smithy).
+Smithy contains maintenance code for conda-forge, which is used by the `conda-smithy` command line tool and the [Admin web services](#admin-web-services). Smithy lives in the repository [conda-forge/conda-smithy](https://github.com/conda-forge/conda-smithy).
 
 `conda-forge/conda-smithy` is the right repository to report bugs for
 

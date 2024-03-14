@@ -66,23 +66,23 @@ External services connect to `staged-recipes` too:
 
 ### Smithy
 
+This is the main feedstock creation and maintenance tool.
+
 - 📜 Source at [`conda-forge/conda-smithy`](https://github.com/conda-forge/conda-smithy)
 - 📦 Packaged at [`conda-forge/conda-smithy-feedstock`](https://github.com/conda-forge/conda-smithy-feedstock)
 - 📖 [Documentation](https://github.com/conda-forge/conda-smithy/blob/main/README.md)
 
-This is the main feedstock creation and maintenance tool.
-
 Most of its usage is automated by our infrastructure:
 
-- Feedstock creation and services registration at `staged-recipes`
-- Regeneration (rerendering), linting and hinting in PRs done by `conda-forge-linter` on `webservices`
+- Feedstock creation and services registration at [`staged-recipes`](#staged-recipes)
+- Regeneration (rerendering), linting and hinting in PRs done by `conda-forge-linter` on [`webservices`](#web-services)
 
 However, you can also use it locally or on your forge-like deployments. For local debugging, you will find these commands useful:
 
 - `conda-smithy rerender`
 - `conda-smithy recipe-lint`
 
-Smithy contains maintenance code for conda-forge, which is used by the `conda-smithy` command line tool and the [Admin web services](#admin-web-services). Smithy lives in the repository [conda-forge/conda-smithy](https://github.com/conda-forge/conda-smithy).
+Smithy contains maintenance code for conda-forge, which is used by the `conda-smithy` command line tool and the [Admin web services](#admin-web-services).
 
 `conda-forge/conda-smithy` is the right repository to report bugs for
 
@@ -92,7 +92,7 @@ Smithy contains maintenance code for conda-forge, which is used by the `conda-sm
 
 `conda-smithy` also contains the command line tool that you should use if you rerender manually from the command line (see [Rerendering feedstocks](updating_pkgs.md#dev-update-rerender)).
 
-Smithy can be used beyond conda-forge's purposes. For example, it can be used to set up self-hosted Azure agents <azure-config> for non-conda-forge infrastructures.
+Smithy can be used beyond conda-forge's purposes. For example, it can be used to set up self-hosted Azure agents for non-conda-forge infrastructures.
 (You could also consider using [Azure virtual machine scale set agents](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/scale-set-agents?view=azure-devops),
 which could be less expensive to run than permanently active agents.)
 
@@ -105,10 +105,10 @@ Bugs or suggestions regarding the service functionality should therefore be open
 
 ### conda-forge pinning
 
+Hosts the global pinnings for conda-forge, and the ongoing migrations.
+
 - ⚙️ Deployed in [Anaconda.org](https://anaconda.org/conda-forge/conda-forge-pinning) via [`conda-forge/conda-forge-pinning-feedstock`](https://github.com/conda-forge/conda-forge-pinning-feedstock)
 - 🔒 Has access to Azure, Anaconda.org (cf-staging)
-
-Hosts the global pinnings for conda-forge, and the ongoing migrations.
 
 Package-wide dependency pins are defined in [conda_build_config.yaml](https://github.com/conda-forge/conda-forge-pinning-feedstock/blob/master/recipe/conda_build_config.yaml) in the [conda-forge/conda-forge-pinning-feedstock](https://github.com/conda-forge/conda-forge-pinning-feedstock).
 
@@ -118,19 +118,19 @@ Please open a [PR](../glossary.md#term-PR) and/or an issue there, if you think a
 
 ### conda-forge-repodata-patches
 
+This repository creates the `repodata.json` patches used by the Anaconda.org to amend the metadata coming from the published packages.
+
 - ⚙️ Deployed in [Anaconda.org](https://anaconda.org/conda-forge/conda-forge-repodata-patches) via [`conda-forge/conda-forge-repodata-patches`](https://github.com/conda-forge/conda-forge-repodata-patches)
 - 🔒 Has access to Azure, Anaconda.org (cf-staging)
-
-This repository creates the `repodata.json` patches used by the Anaconda.org to amend the metadata coming from the published packages.
 
 Read more bout this in [The package life cycle](./life-cycle.md).
 
 ### conda-forge-ci-setup
 
-- ⚙️ Deployed in [Anaconda.org](https://anaconda.org/conda-forge/conda-forge-ci-setup) via [`conda-forge/conda-forge-pinning-feedstock`](https://github.com/conda-forge/conda-forge-ci-setup-feedstock)
-- 🔒 Has access to Azure, Anaconda.org (cf-staging)
-
 This special feedstock provides a package that defines the logic to install and configure a common CI setup across providers.
+
+- ⚙️ Deployed in [Anaconda.org](https://anaconda.org/conda-forge/conda-forge-ci-setup) via [`conda-forge/conda-forge-ci-setup-feedstock`](https://github.com/conda-forge/conda-forge-ci-setup-feedstock)
+- 🔒 Has access to Azure, Anaconda.org (cf-staging)
 
 ### Documentation
 
@@ -142,47 +142,48 @@ If you found any typo error, unclear explanations or new topics that can be cove
 
 ### docker-images
 
+This repository builds the Docker images used to provide a unified system on all Linux builds.
+
 - ⚙️ Deployed in [`conda-forge/docker-images`](https://github.com/conda-forge/docker-images)
 - 🔒 Has access to [DockerHub](#docker-hub) and [Quay.io](#quay)
 - ⛓ Needed by `staged-recipes`, feedstocks.
 
-This repository builds the Docker images used to provide a unified system on all Linux builds.
-
 ### regro/cf-scripts
+
+The code and logic behind [`autotick-bot`](#autotick-bot).
 
 - 📜 Source at [`regro/cf-scripts`](https://github.com/regro/cf-scripts)
 - 📖 [Documentation](https://regro.github.io/cf-scripts/)
 
-The code and logic behind [`autotick-bot`](#autotick-bot).
-
 ### regro/cf-graph-countyfair
+
+This is the graph data used by [`autotick-bot`](#autotick-bot).
 
 - ⚙️ Deployed in [Github Actions via `regro/cf-graph-countyfair`](https://github.com/regro/cf-graph-countyfair)
 - ⛓ Needs [`regro/cf-scripts`](#regrocf-scripts), [`conda-forge/conda-forge-pinning-feedstock`](#conda-forge-pinning)
 - 🤖 Uses [`@regro-cf-autotick-bot`](#bot-accounts)
 - 🔒 Has access to Github API
 
-This is the graph data used by [`autotick-bot`](#autotick-bot).
 The logic to build the graph is provided by [`cf-scripts`](#regrocf-scripts).
 
 ### regro/libcfgraph
+
+The libcfgraph data is similar to [`cf-graph-countyfair`](#regrocf-graph-countyfair).
 
 - ⚙️ Deployed in [Circle CI](https://app.circleci.com/pipelines/github/regro/libcfgraph) via [`regro/libcfgraph`](https://github.com/regro/libcfgraph)
 - ⛓ Needs [`regro/libcflib`](#regrolibcflib)
 - 🤖 Commits as `circleci` (fake username)
 - 🔒 Has access to Github API, Circle CI
 
-The libcfgraph data is similar to [`cf-graph-countyfair`](#regrocf-graph-countyfair).
-
 <!-- TODO: Explain differences in form and purpose -->
 
 ### regro/libcflib
 
+This is the code that builds the data served at [`libcfgraph`](#regrolibcfgraph).
+
 - 📜 Source at [`regro/libcflib`](https://github.com/regro/libcflib)
 - 📦 Packaged at [`conda-forge/libcflib-feedstock`](https://github.com/conda-forge/libcflib-feedstock)
 - 📖 Not documented
-
-This is the code that builds the data served at [`libcfgraph`](#regrolibcfgraph).
 
 ### Others
 
@@ -701,16 +702,17 @@ Combining these two sources with some external components, `conda-smithy` will g
 
 #### feedstocks monorepo
 
-- ⚙️ Deployed in [`conda-forge/feedstocks`](https://github.com/conda-forge/feedstocks)
-
 A single repository containing all feedstocks as submodules.
 
+- ⚙️ Deployed in [`conda-forge/feedstocks`](https://github.com/conda-forge/feedstocks)
+
 #### feedstock-outputs
+
+This repository is a registry of feedstock names and the packages (artifacts) they produce.
 
 - ⚙️ Deployed in [Github Actions via `conda-forge/feedstock-outputs`](https://github.com/conda-forge/feedstock-outputs)
 - 🔒 Has access to Azure, Anaconda.org (cf-staging)
 
-This repository is a registry of feedstock names and the packages (artifacts) they produce.
 Its main purpose is to provide an allow-list for the validation server to prevent malicious cross-feedstock builds, although it's also an informative map of `feedstocks <-> packages` that is exposed in the [packages section of the website](https://conda-forge.org/feedstock-outputs/).
 
 

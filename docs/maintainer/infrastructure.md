@@ -123,7 +123,7 @@ Please open a [PR](../glossary.md#term-PR) and/or an issue there, if you think a
 
 This repository creates the `repodata.json` patches used by the Anaconda.org to amend the metadata coming from the published packages.
 
-Read more bout this in [The package life cycle](/docs/fundamentals/life-cycle.md#post-publication-particularities-1).
+Read more bout this in [The package life cycle](./life-cycle.md).
 
 ### conda-forge-ci-setup
 
@@ -143,7 +143,7 @@ If you found any typo error, unclear explanations or new topics that can be cove
 ### docker-images
 
 - ⚙️ Deployed in [`conda-forge/docker-images`](https://github.com/conda-forge/docker-images)
-- 🔒 Has access to [DockerHub](./services.md#docker-hub) and [Quay.io](./services.md#quay)
+- 🔒 Has access to [DockerHub](#docker-hub) and [Quay.io](#quay)
 - ⛓ Needed by `staged-recipes`, feedstocks.
 
 This repository builds the Docker images used to provide a unified system on all Linux builds.
@@ -153,16 +153,16 @@ This repository builds the Docker images used to provide a unified system on all
 - 📜 Source at [`regro/cf-scripts`](https://github.com/regro/cf-scripts)
 - 📖 [Documentation](https://regro.github.io/cf-scripts/)
 
-The code and logic behind [`autotick-bot`](./automated-maintenance.md#autotick-bot).
+The code and logic behind [`autotick-bot`](#autotick-bot).
 
 ### regro/cf-graph-countyfair
 
 - ⚙️ Deployed in [Github Actions via `regro/cf-graph-countyfair`](https://github.com/regro/cf-graph-countyfair)
 - ⛓ Needs [`regro/cf-scripts`](#regrocf-scripts), [`conda-forge/conda-forge-pinning-feedstock`](#conda-forge-pinning)
-- 🤖 Uses [`@regro-cf-autotick-bot`](./services.md#bot-accounts)
+- 🤖 Uses [`@regro-cf-autotick-bot`](#bot-accounts)
 - 🔒 Has access to Github API
 
-This is the graph data used by [`autotick-bot`](./automated-maintenance.md#autotick-bot).
+This is the graph data used by [`autotick-bot`](#autotick-bot).
 The logic to build the graph is provided by [`cf-scripts`](#regrocf-scripts).
 
 ### regro/libcfgraph

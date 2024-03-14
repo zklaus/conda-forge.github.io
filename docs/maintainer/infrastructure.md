@@ -134,11 +134,14 @@ This special feedstock provides a package that defines the logic to install and 
 
 ### Documentation
 
-The documentation website lives in [conda-forge/conda-forge.github.io](https://github.com/conda-forge/conda-forge.github.io/), and is automatically deployed to our [online version](https://conda-forge.org/).
+The current [conda-forge.org](https://conda-forge.org) is a statically generated website published to Github Pages.
 
-The documentation is built with Docusaurus and the sources files are located in the [`docs/`](https://github.com/conda-forge/conda-forge.github.io/tree/main/docs) directory of the repository.
+- 📜 Source at [conda-forge/conda-forge.github.io](https://github.com/conda-forge/conda-forge.github.io/)
+- ⚙️ Deployed in [conda-forge.org](https://conda-forge.org/)
 
-If you found any typo error, unclear explanations or new topics that can be covered, you can suggest changes to the documentation. For more details, please refer to [Improve the documentation](../user/contributing.md#improve-docs).
+The documentation is built with Docusaurus and the source files are located in the [`docs/`](https://github.com/conda-forge/conda-forge.github.io/tree/main/docs) directory of the repository.
+
+If you find any typos, errors, unclear explanations, or new topics that can be covered, you can suggest changes to the documentation. For more details, please refer to [Improve the documentation](../user/contributing.md#improve-docs).
 
 ### docker-images
 
